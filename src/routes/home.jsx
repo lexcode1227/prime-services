@@ -78,10 +78,10 @@ const HomePage = () => {
             </div>
         </section>
         <section className="flex flex-col md:flex-row justify-center my-14 gap-5 bg-[#6200cb]">
-            <div className="flex flex-col order-2 md:order-first items-center gap-16 text-white text-center p-5">
-                <h2 className="w-full text-[40px] mt-24">ICC's Guiding Values</h2>
+            <div className="flex flex-col order-2 md:order-first items-center gap-16 text-white text-center px-5 py-24">
+                <h2 className="w-full text-[40px]">ICC's Guiding Values</h2>
                 <p className="w-full text-2xl">Foundations of Excellence:</p>
-                <div className="flex flex-col gap-5 justify-center items-center">
+                <div className="flex flex-col md:flex-row gap-5 justify-center items-center">
                     <article className="flex flex-col items-center gap-3 border rounded bg-[#FFFFFF6B] w-60 h-52 p-4">
                         <LiaFileContractSolid className="size-20"/>
                         <h3>Integrity</h3>
@@ -98,7 +98,7 @@ const HomePage = () => {
                         <p>We show up and make it happen!</p>
                     </article>
                 </div>
-                <Link to={"#"} className="w-[80%] bg-white text-primary rounded-full text-lg px-10 py-2.5">know more about our culture</Link>
+                <Link to={"#"} className="w-full sm:max-w-[320px] bg-white text-primary rounded-full text-lg px-10 py-2.5">know more about our culture</Link>
             </div>
         </section>
       </>
