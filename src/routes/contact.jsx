@@ -124,7 +124,7 @@ const ContactPage = () => {
             <div className="w-full px-4 lg:w-1/2">
               <div className="relative rounded-lg bg-white p-8 shadow-lg dark:bg-dark-2 sm:p-12">
                 <form onSubmit={handleSubmit}>
-                  <label htmlFor="name">Name</label>
+                  <label htmlFor="name">Fullname</label>
                   <ContactInputBox
                     type="text"
                     name="name"
