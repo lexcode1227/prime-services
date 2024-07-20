@@ -1,5 +1,5 @@
 import { Footer } from "flowbite-react";
-import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
+import { BsLinkedin , BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
 
 export function FooterComponent() {
   return (
@@ -19,15 +19,15 @@ export function FooterComponent() {
             <div>
               <Footer.Title title="About" className="text-colorText" />
               <Footer.LinkGroup col className="text-colorText">
-                <Footer.Link href="#" className="text-colorText">Home</Footer.Link>
-                <Footer.Link href="#" className="text-colorText">Our Culture</Footer.Link>
+                <Footer.Link href="/" className="text-colorText">Home</Footer.Link>
+                <Footer.Link href="/about-us" className="text-colorText">Our Culture</Footer.Link>
               </Footer.LinkGroup>
             </div>
             <div>
               <Footer.Title title="Explore" className="text-colorText" />
               <Footer.LinkGroup col className="text-colorText">
-                <Footer.Link href="#" className="text-colorText">Services</Footer.Link>
-                <Footer.Link href="#" className="text-colorText">Careers</Footer.Link>
+                <Footer.Link href="/services" className="text-colorText">Services</Footer.Link>
+                <Footer.Link href="/careers" className="text-colorText">Careers</Footer.Link>
               </Footer.LinkGroup>
             </div>
             <div>
@@ -46,8 +46,7 @@ export function FooterComponent() {
             <Footer.Icon href="#" className="text-colorText hover:text-primary" icon={BsFacebook} />
             <Footer.Icon href="#" className="text-colorText hover:text-primary" icon={BsInstagram} />
             <Footer.Icon href="#" className="text-colorText hover:text-primary" icon={BsTwitter} />
-            <Footer.Icon href="#" className="text-colorText hover:text-primary" icon={BsGithub} />
-            <Footer.Icon href="#" className="text-colorText hover:text-primary" icon={BsDribbble} />
+            <Footer.Icon href="#" className="text-colorText hover:text-primary" icon={BsLinkedin} />
           </div>
         </div>
       </div>

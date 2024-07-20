@@ -5,6 +5,12 @@ import Root from "./routes/root";
 import NotFoundPage from "./not-found";
 import HomePage from "./routes/home";
 import "./index.css";
+import ContactPage from "./routes/contact";
+import AboutPage from "./routes/about";
+import ServicesPage from "./routes/services";
+import CareersPage from "./routes/careers";
+import { getJobInformation, getJobsInformation } from "./data";
+import CareersInformationPage from "./routes/CareersInformationPage";
 
 const router = createBrowserRouter([
   {
@@ -17,22 +23,32 @@ const router = createBrowserRouter([
       },
       {
         path: "/contact",
-        element: <HomePage/>,
+        element: <ContactPage/>,
       },
       {
-        path: "/aboutus",
-        element: <HomePage/>,
+        path: "/about-us",
+        element: <AboutPage/>,
       },
       {
         path: "/services",
-        element: <HomePage/>,
+        element: <ServicesPage/>,
       },
       {
         path: "/careers",
-        element: <HomePage/>,
+        element: <CareersPage/>,
+        loader: async ()=> {
+          return getJobsInformation()
+        }
+      },
+      { 
+        path: "/careers/:id",
+        element: <CareersInformationPage/>,
+        loader: async ({params})=> {
+          return getJobInformation(params.id)
+        }
       }
     ]
-  }
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

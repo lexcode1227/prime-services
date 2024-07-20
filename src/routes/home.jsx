@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-// import MainCarousel from "../components/MainCarousel";
-import { IoLogoInstagram } from "react-icons/io5";
 import { Carousel } from "flowbite-react";
 import { LiaFileContractSolid } from "react-icons/lia";
 import { TbFileLike } from "react-icons/tb";
+import FAQ from "../components/FAQ";
 
 const HomePage = () => {
     const [newArrival, setNewArrival] = useState([])
@@ -79,7 +78,7 @@ const HomePage = () => {
         </section>
         <section className="flex flex-col md:flex-row justify-center my-14 gap-5 bg-[#6200cb]">
             <div className="flex flex-col order-2 md:order-first items-center gap-16 text-white text-center px-5 py-24">
-                <h2 className="w-full text-[40px]">ICC's Guiding Values</h2>
+                <h2 className="w-full text-[40px] font-bold">ICC's Guiding Values</h2>
                 <p className="w-full text-2xl">Foundations of Excellence:</p>
                 <div className="flex flex-col md:flex-row gap-5 justify-center items-center">
                     <article className="flex flex-col items-center gap-3 border rounded bg-[#FFFFFF6B] w-60 h-52 p-4">
@@ -100,6 +99,9 @@ const HomePage = () => {
                 </div>
                 <Link to={"#"} className="w-full sm:max-w-[320px] bg-white text-primary rounded-full text-lg px-10 py-2.5">know more about our culture</Link>
             </div>
+        </section>
+        <section>
+            <FAQ/>
         </section>
       </>
     );
