@@ -6,13 +6,10 @@ import { TbFileLike } from "react-icons/tb";
 import FAQ from "../components/FAQ";
 
 const HomePage = () => {
-    const [newArrival, setNewArrival] = useState([])
-    const [categories, setCategories] = useState([])
-
     return (
       <>
         <section className="flex justify-center">
-            <div className="w-full h-96 lg:h-[600px]">
+            <div className="w-full h-96 lg:h-[600px] px-4">
                 <Carousel slideInterval={5000} >
                     <figure className='h-fit relative'>
                         <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" alt="..." className="w-full" />
@@ -78,7 +75,7 @@ const HomePage = () => {
         </section>
         <section className="flex flex-col md:flex-row justify-center my-14 gap-5 bg-[#6200cb]">
             <div className="flex flex-col order-2 md:order-first items-center gap-16 text-white text-center px-5 py-24">
-                <h2 className="w-full text-[40px] font-bold">ICC's Guiding Values</h2>
+                <h2 className="w-full text-[40px] font-bold">PSBPO's Guiding Values</h2>
                 <p className="w-full text-2xl">Foundations of Excellence:</p>
                 <div className="flex flex-col md:flex-row gap-5 justify-center items-center">
                     <article className="flex flex-col items-center gap-3 border rounded bg-[#FFFFFF6B] w-60 h-52 p-4">

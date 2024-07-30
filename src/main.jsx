@@ -9,8 +9,10 @@ import ContactPage from "./routes/contact";
 import AboutPage from "./routes/about";
 import ServicesPage from "./routes/services";
 import CareersPage from "./routes/careers";
+import PrivacyPolicyPage from "./routes/privacyPolicy";
 import { getJobInformation, getJobsInformation } from "./data";
 import CareersInformationPage from "./routes/CareersInformationPage";
+import TermsPage from "./routes/terms";
 
 const router = createBrowserRouter([
   {
@@ -46,7 +48,15 @@ const router = createBrowserRouter([
         loader: async ({params})=> {
           return getJobInformation(params.id)
         }
-      }
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicyPage/>,
+      },
+      {
+        path: "/terms-of-use",
+        element: <TermsPage/>,
+      },
     ]
   },
 ]);

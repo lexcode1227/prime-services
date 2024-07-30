@@ -33,7 +33,7 @@ export function FooterComponent() {
             <div>
               <Footer.Title title="Legal" className="text-colorText"/>
               <Footer.LinkGroup col className="text-colorText">
-                <Footer.Link href="#" className="text-colorText">Privacy Policy</Footer.Link>
+                <Footer.Link href="/privacy-policy" className="text-colorText">Privacy Policy</Footer.Link>
                 <Footer.Link href="#" className="text-colorText">Terms &amp; Conditions</Footer.Link>
               </Footer.LinkGroup>
             </div>

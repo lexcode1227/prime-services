@@ -21,7 +21,7 @@ const CareersInformationPage = () => {
   
     return (
       <section className="bg-white">
-          <Link to={"/careers"} className="mt-14 inline-flex justify-between items-center py-1 px-1 pr-4 mb-4 text-sm rounded-full bg-primary" role="alert">
+          <Link to={"/careers"} className="ml-3 mt-14 inline-flex justify-between items-center py-1 px-1 pr-4 mb-4 text-sm rounded-full bg-primary" role="alert">
             <span className="text-sm  rounded-full text-white px-4 py-1.5 mr-3 flex items-center gap-2"> <IoIosArrowBack /> Back to Careers List </span>     
           </Link>
           <div className="flex flex-col items-center gap-3 py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-12 lg:px-12">
@@ -53,6 +53,14 @@ const CareersInformationPage = () => {
                 <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Benefits:</h2>
                 <List className='text-justify'>
                   {job.benefits?.split("|").map((item, index)=> (
+                    <List.Item key={`${index}-${item.length}`}>{item}</List.Item>
+                  ))}
+                </List>
+              </div>
+              <div className='flex flex-col items-start gap-3 mt-5 w-full'>
+                <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Responsabilities:</h2>
+                <List className='text-justify'>
+                  {job.responsabilities?.split("|").map((item, index)=> (
                     <List.Item key={`${index}-${item.length}`}>{item}</List.Item>
                   ))}
                 </List>

@@ -14,7 +14,7 @@ const ContactPage = () => {
   }
   return (
     <>
-      <section className="flex justify-center relative z-10 overflow-hidden bg-white px-5 py-20 dark:bg-dark lg:px-[50px] lg:py-[120px]">
+      <section className="flex justify-center relative z-10 overflow-hidden bg-white px-5 py-20 lg:px-[50px] lg:py-[120px]">
         <div className="container max-w-screen-lg">
           <div className="-mx-4 flex flex-wrap lg:justify-between">
             <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
@@ -26,9 +26,7 @@ const ContactPage = () => {
                   GET IN TOUCH WITH US
                 </h2>
                 <p className="mb-9 text-base leading-relaxed text-body-color dark:text-dark-6">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eius tempor incididunt ut labore e dolore magna aliqua. Ut
-                  enim adiqua minim veniam quis nostrud exercitation ullamco
+                  Curious or ready to dive into our opportunities? We’re just a message away! Connect with us through email, phone, or social media; whichever you prefer. Our team is here to guide and support you throughout your journey.
                 </p>
                 <div className="mb-8 flex w-full max-w-[370px]">
                   <div className="mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-primary/5 text-primary sm:h-[70px] sm:max-w-[70px]">
@@ -115,7 +113,7 @@ const ContactPage = () => {
                       Email Address
                     </h4>
                     <p className="text-base text-body-color dark:text-dark-6">
-                      info@yourdomain.com
+                      operations@psbposv.com
                     </p>
                   </div>
                 </div>
