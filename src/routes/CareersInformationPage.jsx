@@ -4,6 +4,7 @@ import { Modal, List } from "flowbite-react";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoIosArrowBack } from "react-icons/io";
 import FormApply from '../components/FormApply';
+import { API_URL, BEARER_TOKEN } from '../../config';
 
 const CareersInformationPage = () => {
     const [openModal, setOpenModal] = useState(false);
@@ -21,9 +22,9 @@ const CareersInformationPage = () => {
 
     useEffect(()=> {
       async function fetchCountry(){
-          const response = await fetch("https://www.universal-tutorial.com/api/countries", {
+          const response = await fetch(`${API_URL}/countries`, {
               headers: {
-                  "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfZW1haWwiOiJvcGVyYXRpb25zQHBzYnBvc3YuY29tIiwiYXBpX3Rva2VuIjoiaVloTjJJMTUtZ3dUbEVyU1B2WV9DOERMLVZ3LVRQSEc5U05PTTdXUjJvaWkyT2dBZFhVdjdLQXc2SU5RcG5NNDk1cyJ9LCJleHAiOjE3MjI0OTMzMDZ9.EIBwgbhFRiQYlrNpqfFKEI2A6OCm8NL4ddUA1uijZ0o",
+                  "Authorization": `Bearer ${BEARER_TOKEN}`,
                   "Accept": "application/json"
               }
           })

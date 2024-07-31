@@ -3,6 +3,7 @@ import { PhoneInput } from 'react-international-phone';
 import { Label, TextInput, Select, FileInput } from "flowbite-react";
 import { HiUser , HiMail } from "react-icons/hi";
 import 'react-international-phone/style.css';
+import { API_URL, BEARER_TOKEN } from '../../config';
 
 const FormApply = ({handleModal, countries}) => {
     const [userData, setUserData] = useState({
@@ -44,9 +45,9 @@ const FormApply = ({handleModal, countries}) => {
     useEffect(()=> {
         if (userData.country !== "") { 
             async function fetchCity(){
-                const response = await fetch(`https://www.universal-tutorial.com/api/states/${userData.country}`, {
+                const response = await fetch(`${API_URL}/states/${userData.country}`, {
                     headers: {
-                        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfZW1haWwiOiJvcGVyYXRpb25zQHBzYnBvc3YuY29tIiwiYXBpX3Rva2VuIjoiaVloTjJJMTUtZ3dUbEVyU1B2WV9DOERMLVZ3LVRQSEc5U05PTTdXUjJvaWkyT2dBZFhVdjdLQXc2SU5RcG5NNDk1cyJ9LCJleHAiOjE3MjI0OTMzMDZ9.EIBwgbhFRiQYlrNpqfFKEI2A6OCm8NL4ddUA1uijZ0o",
+                        "Authorization": `Bearer ${BEARER_TOKEN}`,
                         "Accept": "application/json"
                     }
                 })

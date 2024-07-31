@@ -11,7 +11,7 @@ import ServicesPage from "./routes/services";
 import CareersPage from "./routes/careers";
 import PrivacyPolicyPage from "./routes/privacyPolicy";
 import { getJobInformation, getJobsInformation } from "./data";
-import CareersInformationPage from "./routes/careersInformationPage";
+import CareersInformationPage from "./routes/CareersInformationPage";
 import TermsPage from "./routes/terms";
 
 const router = createBrowserRouter([
