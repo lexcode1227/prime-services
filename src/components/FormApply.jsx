@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { PhoneInput } from 'react-international-phone';
 import { Label, TextInput, Select, FileInput } from "flowbite-react";
 import { HiUser , HiMail } from "react-icons/hi";
 import 'react-international-phone/style.css';
 
-const FormApply = ({handleModal}) => {
+const FormApply = ({handleModal, countries}) => {
     const [userData, setUserData] = useState({
         fullname: "",
         email: "",
@@ -13,6 +13,8 @@ const FormApply = ({handleModal}) => {
     })
     const [phone, setPhone] = useState('');
     const [file, setFile] = useState('');
+    const [cities, setCities] = useState([])
+    // console.log(countries);
     
     const handleChange = (e) => {
         const { id, value } = e.target;
@@ -22,20 +24,45 @@ const FormApply = ({handleModal}) => {
         }));
       };
     
-      const handleFileChange = (e) => {
+    const handleFileChange = (e) => {
         setFile(e.target.files[0]);
       };
     
     const handleSubmit = (e)=> {
         e.preventDefault()
-        console.log(userData);
-        console.log(phone);
-        console.log(file);
+        console.log({
+            fullname: userData.fullname,
+            email: userData.email,
+            country: userData.country,
+            city: userData.city,
+            phone,
+            file
+        });
         handleModal()
       }
+
+    useEffect(()=> {
+        if (userData.country !== "") { 
+            async function fetchCity(){
+                const response = await fetch(`https://www.universal-tutorial.com/api/states/${userData.country}`, {
+                    headers: {
+                        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfZW1haWwiOiJvcGVyYXRpb25zQHBzYnBvc3YuY29tIiwiYXBpX3Rva2VuIjoiaVloTjJJMTUtZ3dUbEVyU1B2WV9DOERMLVZ3LVRQSEc5U05PTTdXUjJvaWkyT2dBZFhVdjdLQXc2SU5RcG5NNDk1cyJ9LCJleHAiOjE3MjI0OTMzMDZ9.EIBwgbhFRiQYlrNpqfFKEI2A6OCm8NL4ddUA1uijZ0o",
+                        "Accept": "application/json"
+                    }
+                })
+                if (!response.ok) {
+                    throw new Error(`Response status: ${response.status}`);
+                }
+                const data = await response.json();
+                setCities(data.map(item => item.state_name));
+            } 
+            fetchCity()
+        }
+        setCities([])
+    },[userData.country])  
   return (
     <div>
-        <form onSubmit={handleSubmit} className="flex max-w-md flex-col gap-4">
+        <form onSubmit={handleSubmit} className="w-full flex max-w-md flex-col gap-4">
             <div className="max-w-2xl">
                 <div className="mb-2 block">
                     <Label htmlFor="fullname" value="Your fullname" />
@@ -54,10 +81,9 @@ const FormApply = ({handleModal}) => {
                 </div>
                 <Select id="country" value={userData.country} onChange={handleChange} required>
                     <option value="">Select Country</option>
-                    <option>United States</option>
-                    <option>Canada</option>
-                    <option>France</option>
-                    <option>Germany</option>
+                    {countries.map( (item, index) => (
+                        <option key={index-item.length-item.length*Math.random()} value={item}>{item}</option>
+                    ))}
                 </Select>
             </div>
             <div className="max-w-2xl">
@@ -66,10 +92,9 @@ const FormApply = ({handleModal}) => {
                 </div>
                 <Select id="city" value={userData.city} onChange={handleChange} required>
                     <option value="">Select City</option>
-                    <option>San Salvador</option>
-                    <option>San Miguel</option>
-                    <option>Santa Ana</option>
-                    <option>La Libertad</option>
+                    {cities?.map( (item, index) => (
+                        <option key={index-item.length-item.length*Math.random()} value={item}>{item}</option>
+                    ))}
                 </Select>
             </div>
             <div className="max-w-2xl">
@@ -78,10 +103,12 @@ const FormApply = ({handleModal}) => {
                 </div>
                 <PhoneInput
                     id="phone"
+                    name="phoneInput"
                     defaultCountry="us"
                     value={phone}
                     onChange={(phone) => setPhone(phone)}
                     inputProps='rounded-lg'
+                    required
                 />
             </div>
             <div id="fileUpload" className="max-w-2xl">

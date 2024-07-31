@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Carousel } from "flowbite-react";
 import { LiaFileContractSolid } from "react-icons/lia";
 import { TbFileLike } from "react-icons/tb";
+import { FaAward, FaHandshakeSimple } from "react-icons/fa6";
+import { FaUserShield, FaHandHoldingUsd } from "react-icons/fa";
 import FAQ from "../components/FAQ";
 
 const HomePage = () => {
@@ -73,25 +75,30 @@ const HomePage = () => {
                 </div>
             </div>
         </section>
-        <section className="flex flex-col md:flex-row justify-center my-14 gap-5 bg-[#6200cb]">
+        <section className="flex flex-col md:flex-row justify-center my-14 gap-5 bg-gradient-to-t from-[#004aad] from-10% via-[#5654d2] via-30% to-[#1d1d95] to-95%">
             <div className="flex flex-col order-2 md:order-first items-center gap-16 text-white text-center px-5 py-24">
                 <h2 className="w-full text-[40px] font-bold">PSBPO's Guiding Values</h2>
                 <p className="w-full text-2xl">Foundations of Excellence:</p>
-                <div className="flex flex-col md:flex-row gap-5 justify-center items-center">
-                    <article className="flex flex-col items-center gap-3 border rounded bg-[#FFFFFF6B] w-60 h-52 p-4">
-                        <LiaFileContractSolid className="size-20"/>
+                <div className="flex flex-col md:flex-row md:flex-wrap gap-5 justify-center items-center">
+                    <article className="flex flex-col items-center gap-3 border rounded bg-[#FFFFFF6B] w-60 h-80 p-4 text-justify">
+                        <FaAward className="size-20"/>
+                        <h3>Quality</h3>
+                        <p>Delivering top-notch interpretation services that consistently exceed industry standards. Ensuring client satisfaction through accuracy and professionalism.</p>
+                    </article>
+                    <article className="flex flex-col items-center gap-3 border rounded bg-[#FFFFFF6B] w-60 h-80 p-4 text-justify">
+                        <FaUserShield className="size-20"/>
                         <h3>Integrity</h3>
-                        <p>We show up and make it happen!</p>
+                        <p>Conducting business with transparency, fostering trust with clients and interpreters. Upholding high ethical standards and maintaining confidentiality.</p>
                     </article>
-                    <article className="flex flex-col items-center gap-3 border rounded bg-[#FFFFFF6B] w-60 h-52 p-4">
-                        <LiaFileContractSolid className="size-20"/>
-                        <h3>Agility</h3>
-                        <p>We show up and make it happen!</p>
+                    <article className="flex flex-col items-center gap-3 border rounded bg-[#FFFFFF6B] w-60 h-80 p-4 text-justify">
+                        <FaHandshakeSimple className="size-20"/>
+                        <h3>Reliability</h3>
+                        <p>Providing consistent, dependable support to our clients at all times. Ensuring timely and effective communication to meet client needs.</p>
                     </article>
-                    <article className="flex flex-col items-center gap-3 border rounded bg-[#FFFFFF6B] w-60 h-52 p-4">
-                        <LiaFileContractSolid className="size-20"/>
-                        <h3>Ownership</h3>
-                        <p>We show up and make it happen!</p>
+                    <article className="flex flex-col items-center gap-3 border rounded bg-[#FFFFFF6B] w-60 h-80 p-4 text-justify">
+                        <FaHandHoldingUsd className="size-20"/>
+                        <h3>Efficiency</h3>
+                        <p>Maximizing operational efficiency for cost-effective services. Continuously streamlining processes to reduce waste and enhance turnaround times.</p>
                     </article>
                 </div>
                 <Link to={"#"} className="w-full sm:max-w-[320px] bg-white text-primary rounded-full text-lg px-10 py-2.5">know more about our culture</Link>

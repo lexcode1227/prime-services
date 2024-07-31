@@ -1,5 +1,6 @@
 import { Footer } from "flowbite-react";
-import { BsLinkedin , BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
+import { BsLinkedin , BsFacebook, BsTwitter } from "react-icons/bs";
+import { RiInstagramFill } from "react-icons/ri";
 
 export function FooterComponent() {
   return (
@@ -44,7 +45,7 @@ export function FooterComponent() {
           <Footer.Copyright href="#" by="Prime Services™" year={2024} className="text-colorText" />
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
             <Footer.Icon href="#" className="text-colorText hover:text-primary" icon={BsFacebook} />
-            <Footer.Icon href="#" className="text-colorText hover:text-primary" icon={BsInstagram} />
+            <Footer.Icon href="#" className="text-colorText hover:text-primary" icon={RiInstagramFill} />
             <Footer.Icon href="#" className="text-colorText hover:text-primary" icon={BsTwitter} />
             <Footer.Icon href="#" className="text-colorText hover:text-primary" icon={BsLinkedin} />
           </div>

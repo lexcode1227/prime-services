@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useLoaderData } from 'react-router-dom';
 import { Button, Checkbox, Label, Modal, TextInput } from "flowbite-react";
 import { List } from "flowbite-react";
@@ -8,6 +8,7 @@ import FormApply from '../components/FormApply';
 
 const CareersInformationPage = () => {
     const [openModal, setOpenModal] = useState(false);
+    const [countries, setCountries] = useState([])
     const jobInformation = useLoaderData();
   
     if (!jobInformation) {
@@ -18,6 +19,23 @@ const CareersInformationPage = () => {
     const handleModal = ()=> {
       setOpenModal(false)
     }
+
+    useEffect(()=> {
+      async function fetchCountry(){
+          const response = await fetch("https://www.universal-tutorial.com/api/countries", {
+              headers: {
+                  "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfZW1haWwiOiJvcGVyYXRpb25zQHBzYnBvc3YuY29tIiwiYXBpX3Rva2VuIjoiaVloTjJJMTUtZ3dUbEVyU1B2WV9DOERMLVZ3LVRQSEc5U05PTTdXUjJvaWkyT2dBZFhVdjdLQXc2SU5RcG5NNDk1cyJ9LCJleHAiOjE3MjI0OTMzMDZ9.EIBwgbhFRiQYlrNpqfFKEI2A6OCm8NL4ddUA1uijZ0o",
+                  "Accept": "application/json"
+              }
+          })
+          if (!response.ok) {
+              throw new Error(`Response status: ${response.status}`);
+          }
+          const data = await response.json();
+          setCountries(data.map(item => item.country_name));
+      } 
+      fetchCountry()
+  },[])
   
     return (
       <section className="bg-white">
@@ -45,7 +63,7 @@ const CareersInformationPage = () => {
                 <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Requirement:</h2>
                 <List className='text-justify'>
                   {job.requirement?.split("|").map((item, index)=> (
-                    <List.Item key={`${index}-${item.length}`}>{item}</List.Item>
+                    <List.Item className='' key={`${index}-${item.length}`}>{item}</List.Item>
                   ))}
                 </List>
               </div>
@@ -74,10 +92,10 @@ const CareersInformationPage = () => {
                 </List>
               </div>
           </div>
-          <Modal show={openModal} size="md" popup onClose={handleModal}>
+          <Modal show={openModal} size="lg" popup onClose={handleModal}>
             <Modal.Header />
             <Modal.Body>
-                <FormApply handleModal={handleModal}/>
+                <FormApply handleModal={handleModal} countries={countries} />
             </Modal.Body>
           </Modal>
       </section>
