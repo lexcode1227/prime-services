@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useLoaderData } from 'react-router-dom';
-import { Button, Checkbox, Label, Modal, TextInput } from "flowbite-react";
-import { List } from "flowbite-react";
+import { Modal, List } from "flowbite-react";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoIosArrowBack } from "react-icons/io";
 import FormApply from '../components/FormApply';

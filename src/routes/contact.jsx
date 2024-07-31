@@ -4,13 +4,28 @@ import 'react-international-phone/style.css';
 
 const ContactPage = () => {
   const [userData, setUserData] = useState({
-    name: ""
-  })
-  const [phone, setPhone] = useState('');
+    fullname: "",
+    email: "",
+    message: "",
+})
+  const [phoneNumber, setPhoneNumber] = useState('');
   
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setUserData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
+
   const handleSubmit = (e)=> {
     e.preventDefault()
-    console.log();
+    console.log({
+      fullname: userData.fullname,
+      email: userData.email,
+      phoneNumber: phoneNumber,
+      message: userData.message,
+    });
   }
   return (
     <>
@@ -127,6 +142,8 @@ const ContactPage = () => {
                     type="text"
                     name="name"
                     id="name"
+                    value={userData.fullname}
+                    onChange={handleChange}
                     placeholder="John Kennedy"
                   />
                   <label htmlFor="email">Email</label>
@@ -134,15 +151,18 @@ const ContactPage = () => {
                     type="email"
                     name="email"
                     id="email"
+                    value={userData.email}
+                    onChange={handleChange}
                     placeholder="Your Email"
                   />
                   <label htmlFor="phone">Phone Number</label>
                   <PhoneInput
                     id="phone"
                     defaultCountry="us"
-                    value={phone}
-                    onChange={(phone) => setPhone(phone)}
+                    value={phoneNumber}
+                    onChange={(phone) => setPhoneNumber(phone)}
                     className='mt-3 mb-6 rounded border border-solid border-[#6B7280]'
+                    required
                   />
                   <label htmlFor="details">Your Message</label>
                   <ContactTextArea
@@ -150,7 +170,8 @@ const ContactPage = () => {
                     placeholder="Write what you need..."
                     name="details"
                     id="details"
-                    defaultValue=""
+                    value={userData.message}
+                    onChange={handleChange}
                   />
                   <div>
                     <button
@@ -980,7 +1001,7 @@ const ContactPage = () => {
 
 export default ContactPage
 
-const ContactTextArea = ({ row, placeholder, name, defaultValue }) => {
+const ContactTextArea = ({ row, placeholder, name }) => {
   return (
     <>
       <div className="mt-3 mb-6">
@@ -989,7 +1010,7 @@ const ContactTextArea = ({ row, placeholder, name, defaultValue }) => {
           placeholder={placeholder}
           name={name}
           className="w-full resize-none rounded border border-stroke px-[14px] py-3 text-base text-body-color outline-none focus:border-primary dark:border-dark-3 dark:bg-dark dark:text-dark-6"
-          defaultValue={defaultValue}
+          required
         />
       </div>
     </>
