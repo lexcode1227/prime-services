@@ -1,10 +1,9 @@
-import {useState, useEffect} from 'react';
-import { Outlet, Link, } from 'react-router-dom';
-import { Navbar, Button } from "flowbite-react";
+import { Outlet, Link, useLocation, } from 'react-router-dom';
+import { Navbar } from "flowbite-react";
 import { FooterComponent } from '../components/Footer';
 
 export default function Root() {
-
+    let {pathname} = useLocation();
     return (
       <>
         <main className="bg-background text-colorText min-h-screen font-alternative flex flex-col">
@@ -19,13 +18,13 @@ export default function Root() {
                         <Navbar.Toggle className='bg-white text-primary' />
                     </div>
                     <Navbar.Collapse className=''>
-                        <Navbar.Link className='text-white text-lg' href="/">
+                        <Navbar.Link className={`text-white text-lg hover:text-purple-950 md:hover:text-purple-950 ${pathname!=="/" ? "" : "text-purple-950" }`} href="/">
                           Home
                         </Navbar.Link>
-                        <Navbar.Link className='text-white text-lg' href="/about-us">About</Navbar.Link>
-                        <Navbar.Link className='text-white text-lg' href="/services">Services</Navbar.Link>
-                        <Navbar.Link className='text-white text-lg' href="/careers">Careers</Navbar.Link>
-                        <Navbar.Link className='text-white text-lg' href="/contact">Contact</Navbar.Link>
+                        <Navbar.Link className={`text-white text-lg hover:text-purple-950 md:hover:text-purple-950 ${pathname!=="/about-us" ? "" : "text-purple-950" }`} href="/about-us">About</Navbar.Link>
+                        <Navbar.Link className={`text-white text-lg hover:text-purple-950 md:hover:text-purple-950 ${pathname!=="/services" ? "" : "text-purple-950" }`} href="/services">Services</Navbar.Link>
+                        <Navbar.Link className={`text-white text-lg hover:text-purple-950 md:hover:text-purple-950 ${pathname!=="/careers" ? "" : "text-purple-950" }`} href="/careers">Careers</Navbar.Link>
+                        <Navbar.Link className={`text-white text-lg hover:text-purple-950 md:hover:text-purple-950 ${pathname!=="/contact" ? "" : "text-purple-950" }`} href="/contact">Contact</Navbar.Link>
                     </Navbar.Collapse>
                 </Navbar>
             </header>

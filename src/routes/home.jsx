@@ -80,28 +80,28 @@ const HomePage = () => {
                 <h2 className="w-full text-[40px] font-bold">PSBPO's Guiding Values</h2>
                 <p className="w-full text-2xl">Foundations of Excellence:</p>
                 <div className="flex flex-col md:flex-row md:flex-wrap gap-5 justify-center items-center">
-                    <article className="flex flex-col items-center gap-3 border rounded bg-[#FFFFFF6B] w-60 h-80 p-4 text-justify">
+                    <article className="flex flex-col items-center gap-3 border rounded bg-transparent w-60 h-80 p-4 text-justify">
                         <FaAward className="size-20"/>
-                        <h3>Quality</h3>
+                        <h3 className="font-bold">Quality</h3>
                         <p>Delivering top-notch interpretation services that consistently exceed industry standards. Ensuring client satisfaction through accuracy and professionalism.</p>
                     </article>
-                    <article className="flex flex-col items-center gap-3 border rounded bg-[#FFFFFF6B] w-60 h-80 p-4 text-justify">
+                    <article className="flex flex-col items-center gap-3 border rounded bg-transparent w-60 h-80 p-4 text-justify">
                         <FaUserShield className="size-20"/>
-                        <h3>Integrity</h3>
+                        <h3 className="font-bold" >Integrity</h3>
                         <p>Conducting business with transparency, fostering trust with clients and interpreters. Upholding high ethical standards and maintaining confidentiality.</p>
                     </article>
-                    <article className="flex flex-col items-center gap-3 border rounded bg-[#FFFFFF6B] w-60 h-80 p-4 text-justify">
+                    <article className="flex flex-col items-center gap-3 border rounded bg-transparent w-60 h-80 p-4 text-justify">
                         <FaHandshakeSimple className="size-20"/>
-                        <h3>Reliability</h3>
+                        <h3 className="font-bold" >Reliability</h3>
                         <p>Providing consistent, dependable support to our clients at all times. Ensuring timely and effective communication to meet client needs.</p>
                     </article>
-                    <article className="flex flex-col items-center gap-3 border rounded bg-[#FFFFFF6B] w-60 h-80 p-4 text-justify">
+                    <article className="flex flex-col items-center gap-3 border rounded bg-transparent w-60 h-80 p-4 text-justify">
                         <FaHandHoldingUsd className="size-20"/>
-                        <h3>Efficiency</h3>
+                        <h3 className="font-bold" >Efficiency</h3>
                         <p>Maximizing operational efficiency for cost-effective services. Continuously streamlining processes to reduce waste and enhance turnaround times.</p>
                     </article>
                 </div>
-                <Link to={"#"} className="w-full sm:max-w-[320px] bg-white text-primary rounded-full text-lg px-10 py-2.5">know more about our culture</Link>
+                <Link to={"/about-us"} className="w-full sm:max-w-[340px] bg-white text-primary rounded-full font-bold text-lg px-10 py-2.5 cursor-pointer">Know more about our culture</Link>
             </div>
         </section>
         <section>
