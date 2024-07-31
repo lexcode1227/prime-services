@@ -8,13 +8,9 @@ export function FooterComponent() {
       <div className="w-full">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
           <div>
-            <Footer.Brand
-              href="https://google.com"
-              src="/vite.svg"
-              alt="Logo"
-              name="Prime Services"
-              className="text-colorText"
-            />
+            <Footer.Brand href="/"  className="text-colorText">
+                <img src="/logo-dark.svg" alt="Logo empresarial de prime services" className="h-20" />
+            </Footer.Brand>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
             <div>

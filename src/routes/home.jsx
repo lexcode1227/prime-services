@@ -11,7 +11,7 @@ const HomePage = () => {
     return (
       <>
         <section className="flex justify-center">
-            <div className="w-full h-96 lg:h-[600px] px-4">
+            <div className="w-full h-80 lg:h-[600px] px-4">
                 <Carousel slideInterval={5000} >
                     <figure className='h-fit relative'>
                         <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" alt="..." className="w-full" />
@@ -52,11 +52,11 @@ const HomePage = () => {
                 </Carousel>
             </div>
         </section>
-        <section className="flex flex-col md:flex-row justify-center my-14 gap-5">
+        <section className="flex flex-col md:flex-row justify-center my-14 px-4 gap-5">
             <div className="flex flex-col order-2 md:order-first justify-end">
                 <img src="https://i0.wp.com/iccbpo.com/wp-content/uploads/2023/12/Group-5.png?w=635&ssl=1" alt="" />
             </div>
-            <div className="flex flex-col justify-between items-center gap-4 w-full max-w-[710px]">
+            <div className="flex flex-col justify-between items-center gap-4 text-justify w-full max-w-[710px]">
                 <h2 className="text-center text-4xl text-primary font-bold">Choose To Be Different</h2>
                 <p>Our mission is clear: to contribute to our client’s success by guaranteeing the best experience and results while creating a positive work experience for each one of our collaborators. We envision a future where we lead the industry as a work-from-home provider, both for our clients and our dedicated collaborators.</p>
                 <div className="flex justify-between gap-5 p-4">

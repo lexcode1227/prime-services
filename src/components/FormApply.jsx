@@ -116,7 +116,7 @@ const FormApply = ({handleModal, countries}) => {
                 <div className="mb-2 block">
                     <Label htmlFor="file" value="Upload file" />
                 </div>
-                <FileInput id="file" helperText="Your CV information will be saved carefully" onChange={handleFileChange} required />
+                <FileInput id="file" accept='.pdf' helperText="Your CV information will be saved carefully" onChange={handleFileChange} required />
             </div>
             <div>
                 <button
