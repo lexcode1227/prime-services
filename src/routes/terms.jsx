@@ -6,7 +6,7 @@ const TermsPage = () => {
         <article className='container pb-10 pt-20 px-4 dark:bg-dark lg:pb-20 lg:pt-[120px] text-justify'>
             <h2 className="w-full text-[40px] text-center text-primary font-bold">TERMS OF USE</h2>
             <div className='flex flex-col flex-wrap justify-between items-center gap-5 max-w-full'>
-                <p>Welcome to the Prime Services website (https://primeservices.lat). This site is owned and operated by Prime Services. By accessing or using this website, you agree to comply with and be bound by these Terms of Use. If you disagree with any part of these terms, please do not use our site. You must be at least 18 years old to use our website.</p>
+                <p>Welcome to the Prime Services website https://www.psbposv.com/. This site is owned and operated by Prime Services. By accessing or using this website, you agree to comply with and be bound by these Terms of Use. If you disagree with any part of these terms, please do not use our site. You must be at least 18 years old to use our website.</p>
                 <p> <strong>Access to the Website</strong></p>
                 <p>Prime Services grants you a non-transferable, non-exclusive, revocable, limited license to access and use the website for your personal, non-commercial use, subject to these Terms</p>   
                 

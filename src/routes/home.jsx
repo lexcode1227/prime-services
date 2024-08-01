@@ -52,13 +52,13 @@ const HomePage = () => {
                 </Carousel>
             </div>
         </section>
-        <section className="flex flex-col md:flex-row justify-center my-14 px-4 gap-5">
+        <section className="flex flex-col lg:flex-row justify-center my-14 px-4 gap-5">
             <div className="flex flex-col order-2 md:order-first justify-end">
-                <img src="https://i0.wp.com/iccbpo.com/wp-content/uploads/2023/12/Group-5.png?w=635&ssl=1" alt="" />
+                <img className="max-w-full lg:max-w-[600px]" src="https://res.cloudinary.com/dwuv0l98b/image/upload/ar_1:1,c_crop,g_center/wsdzttgu8jvy4qo62e4o.jpg" alt="girl working for our company" />
             </div>
             <div className="flex flex-col justify-between items-center gap-4 text-justify w-full max-w-[710px]">
-                <h2 className="text-center text-4xl text-primary font-bold">Choose To Be Different</h2>
-                <p>Our mission is clear: to contribute to our client’s success by guaranteeing the best experience and results while creating a positive work experience for each one of our collaborators. We envision a future where we lead the industry as a work-from-home provider, both for our clients and our dedicated collaborators.</p>
+                <h2 className="text-center text-4xl text-primary font-bold">We aim for a change</h2>
+                <p>We are dedicated to transforming the lives of our team members by offering a work experience that prioritizes quality of life. We provide the opportunity to work from the comfort of home, allowing for a flexible schedule that accommodates personal needs and promotes work-life balance. We recognize and reward the hard work of our interpreters with fair and competitive compensation, ensuring that our employees feel valued and appreciated. Our mission is to create a supportive and enriching environment where everyone can thrive, professionally and personally.</p>
                 <div className="flex justify-between gap-5 p-4">
                     <LiaFileContractSolid className="w-1/4 h-auto text-primary" />
                     <div className="text-colorText w-3/4">

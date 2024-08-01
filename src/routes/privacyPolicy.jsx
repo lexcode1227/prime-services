@@ -8,10 +8,10 @@ const PrivacyPolicyPage = () => {
             <div className='flex flex-col flex-wrap justify-between items-center gap-5 max-w-full'>
                 <h3>Last updated July 21,2024</h3>
                 <p>Prime Services ("Prime Services," "we," "us," or "our") is dedicated to safeguarding your privacy. This notice explains how we gather, use, store, and share your personal data when you use our services ("Services"), such as:</p>
-                <li className='w-full text-start'>- Visiting our website at [Insert Website], or any other website linking to this privacy notice</li>
+                <li className='w-full text-start'>- Visiting our website at https://www.psbposv.com/, or any other website linking to this privacy notice</li>
                 <li className='w-full text-start'>- Interacting with us in other ways, including sales, marketing, or events</li>
                     
-                <p>Have questions or concerns? This notice will help you understand your privacy rights. If you disagree with our policies and practices, please do not use our Services. For any questions, contact us at [Insert Contact Email].</p>
+                <p>Have questions or concerns? This notice will help you understand your privacy rights. If you disagree with our policies and practices, please do not use our Services. For any questions, contact us at operations@psbposv.com.</p>
                 <p> <strong>Key Points</strong></p>
                 <p>This summary highlights the main points from our privacy notice. Click the link following each point for more details or use the table of contents below to find specific sections. </p>   
                     
@@ -82,7 +82,7 @@ const PrivacyPolicyPage = () => {
                 </p>
                 <p> <strong>7. Contact Us</strong></p>
                 <p>
-                    For any questions or comments about this notice, email us at [Insert Contact Email] or send mail to:
+                    For any questions or comments about this notice, email us at operations@psbposv.com or send mail to:
 
                     Prime Services LLC
                 </p>
