@@ -4,7 +4,9 @@ import 'react-international-phone/style.css';
 
 const ContactPage = () => {
   const [userData, setUserData] = useState({
-    fullname: "",
+    name: "",
+    lastName: "",
+    companyName: "",
     email: "",
     message: "",
 })
@@ -21,7 +23,9 @@ const ContactPage = () => {
   const handleSubmit = (e)=> {
     e.preventDefault()
     console.log({
-      fullname: userData.fullname,
+      name: userData.name,
+      lastName: userData.lastName,
+      companyName: userData.companyName,
       email: userData.email,
       phoneNumber: phoneNumber,
       message: userData.message,
@@ -29,7 +33,7 @@ const ContactPage = () => {
   }
   return (
     <>
-      <section className="flex justify-center relative z-10 overflow-hidden bg-white px-5 py-20 lg:px-[50px] lg:py-[120px]">
+      <section className="flex justify-center relative z-10 overflow-hidden bg-white mt-24 px-5 py-20 lg:px-[50px] lg:py-[120px]">
         <div className="container max-w-screen-lg">
           <div className="-mx-4 flex flex-wrap lg:justify-between">
             <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
@@ -63,7 +67,7 @@ const ContactPage = () => {
                       Our Location
                     </h4>
                     <p className="text-base text-body-color dark:text-dark-6">
-                      99 S.t Jomblo Park Pekanbaru 28292. United States
+                      San Salvador, El Salvador
                     </p>
                   </div>
                 </div>
@@ -128,7 +132,7 @@ const ContactPage = () => {
                       Email Address
                     </h4>
                     <p className="text-base text-body-color dark:text-dark-6">
-                      operations@psbposv.com
+                      info@psbposv.com
                     </p>
                   </div>
                 </div>
@@ -137,14 +141,32 @@ const ContactPage = () => {
             <div className="w-full px-4 lg:w-1/2">
               <div className="relative rounded-lg bg-white p-8 shadow-lg dark:bg-dark-2 sm:p-12">
                 <form onSubmit={handleSubmit}>
-                  <label htmlFor="name">Fullname</label>
+                  <label htmlFor="name">Name</label>
                   <ContactInputBox
                     type="text"
                     name="name"
                     id="name"
-                    value={userData.fullname}
+                    value={userData.name}
                     onChange={handleChange}
-                    placeholder="John Kennedy"
+                    placeholder="John"
+                  />
+                  <label htmlFor="name">Last name</label>
+                  <ContactInputBox
+                    type="text"
+                    name="lastname"
+                    id="lastname"
+                    value={userData.lastName}
+                    onChange={handleChange}
+                    placeholder="Smith"
+                  />
+                  <label htmlFor="name">Company name</label>
+                  <ContactInputBox
+                    type="text"
+                    name="companyName"
+                    id="companyName"
+                    value={userData.companyName}
+                    onChange={handleChange}
+                    placeholder="Digital Ocean"
                   />
                   <label htmlFor="email">Email</label>
                   <ContactInputBox
@@ -153,7 +175,7 @@ const ContactPage = () => {
                     id="email"
                     value={userData.email}
                     onChange={handleChange}
-                    placeholder="Your Email"
+                    placeholder="user@domain.com"
                   />
                   <label htmlFor="phone">Phone Number</label>
                   <PhoneInput
@@ -166,7 +188,7 @@ const ContactPage = () => {
                   />
                   <label htmlFor="details">Your Message</label>
                   <ContactTextArea
-                    row="6"
+                    row="3"
                     placeholder="Write what you need..."
                     name="details"
                     id="details"

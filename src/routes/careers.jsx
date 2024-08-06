@@ -7,7 +7,7 @@ const CareersPage = () => {
     const jobsInformation = useLoaderData();
 
   return (
-    <section className='flex flex-col items-center gap-5 my-14 h-[50vh]'>
+    <section className='flex flex-col items-center gap-5 mt-32 my-14 h-[50vh]'>
         <h2 className="w-full text-[40px] text-center text-primary font-bold">Available Careers</h2>
         <div className='flex flex-col flex-wrap justify-between items-center gap-5'>
             {jobsInformation?.map((job)=>(

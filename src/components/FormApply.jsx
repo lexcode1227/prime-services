@@ -3,7 +3,7 @@ import { PhoneInput } from 'react-international-phone';
 import { Label, TextInput, Select, FileInput } from "flowbite-react";
 import { HiUser , HiMail } from "react-icons/hi";
 import 'react-international-phone/style.css';
-import { API_URL, BEARER_TOKEN } from '../../config';
+import { API_URL } from '../../config';
 
 const FormApply = ({handleModal, countries}) => {
     const [userData, setUserData] = useState({
@@ -15,7 +15,6 @@ const FormApply = ({handleModal, countries}) => {
     const [phone, setPhone] = useState('');
     const [file, setFile] = useState('');
     const [cities, setCities] = useState([])
-    // console.log(countries);
     
     const handleChange = (e) => {
         const { id, value } = e.target;
@@ -43,11 +42,12 @@ const FormApply = ({handleModal, countries}) => {
       }
 
     useEffect(()=> {
-        if (userData.country !== "") { 
+        if (userData.country !== "") {
+            const storedToken = localStorage.getItem('BEARER_TOKEN');
             async function fetchCity(){
                 const response = await fetch(`${API_URL}/states/${userData.country}`, {
                     headers: {
-                        "Authorization": `Bearer ${BEARER_TOKEN}`,
+                        "Authorization": `Bearer ${storedToken}`,
                         "Accept": "application/json"
                     }
                 })

@@ -10,7 +10,7 @@ import FAQ from "../components/FAQ";
 const HomePage = () => {
     return (
       <>
-        <section className="flex justify-center">
+        <section className="flex justify-center mt-[116px]">
             <div className="w-full h-80 lg:h-[600px] px-4">
                 <Carousel slideInterval={5000} >
                     <figure className='h-fit relative'>

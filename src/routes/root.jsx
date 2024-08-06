@@ -7,7 +7,7 @@ export default function Root() {
     return (
       <>
         <main className="bg-background text-colorText min-h-screen font-alternative flex flex-col">
-            <header className='flex justify-betweem items-center w-full'>              
+            <header className='flex justify-betweem items-center w-full fixed top-0 z-50'>              
                 <Navbar fluid rounded className='w-full py-[26px] px-4 bg-primary text-white rounded-none'>
                     <Navbar.Brand as={Link} href="/">
                         <img src="/logo.svg" className="mr-3 h-16 text-white" alt="Flowbite React Logo" />

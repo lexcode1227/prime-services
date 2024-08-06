@@ -4,7 +4,7 @@ import { Modal, List } from "flowbite-react";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoIosArrowBack } from "react-icons/io";
 import FormApply from '../components/FormApply';
-import { API_URL, BEARER_TOKEN } from '../../config';
+import { API_URL, COUNTRIES_API_TOKEN, COUNTRIES_USER_EMAIL } from '../../config';
 
 const CareersInformationPage = () => {
     const [openModal, setOpenModal] = useState(false);
@@ -21,24 +21,66 @@ const CareersInformationPage = () => {
     }
 
     useEffect(()=> {
-      async function fetchCountry(){
-          const response = await fetch(`${API_URL}/countries`, {
-              headers: {
-                  "Authorization": `Bearer ${BEARER_TOKEN}`,
-                  "Accept": "application/json"
-              }
-          })
-          if (!response.ok) {
-              throw new Error(`Response status: ${response.status}`);
+      const fetchCountriesWithToken = async (token) => {
+        const response = await fetch(`${API_URL}/countries`, {
+          headers: {
+            "Authorization": `Bearer ${token}`,
+            "Accept": "application/json"
           }
+        });
+  
+        if (!response.ok) {
+          if (response.status === 500) {
+            const newToken = await getAccessToken();
+            if (newToken) {
+              fetchCountriesWithToken(newToken);
+            }
+          } else {
+            throw new Error(`Response status: ${response.status}`);
+          }
+        } else {
           const data = await response.json();
           setCountries(data.map(item => item.country_name));
-      } 
-      fetchCountry()
+        }
+      }
+  
+      const getAccessToken = async () => {
+        const response = await fetch(`${API_URL}/getaccesstoken`, {
+          headers: {
+            "Accept": "application/json",
+            "api-token": COUNTRIES_API_TOKEN,
+            "user-email": COUNTRIES_USER_EMAIL
+          }
+        });
+  
+        if (!response.ok) {
+          throw new Error(`Token fetch error: ${response.status}`);
+        }
+  
+        const data = await response.json();
+        const expirationTime = Date.now() + 24 * 60 * 60 * 1000;
+        localStorage.setItem('BEARER_TOKEN', data.auth_token);
+        localStorage.setItem('TOKEN_EXPIRATION', expirationTime);
+        return data.auth_token;
+      }
+
+      const checkToken = async () => {
+        const storedToken = localStorage.getItem('BEARER_TOKEN');
+        const tokenExpiration = localStorage.getItem('TOKEN_EXPIRATION');
+  
+        if (storedToken && tokenExpiration && Date.now() < tokenExpiration) {
+          fetchCountriesWithToken(storedToken);
+        } else {
+          const newToken = await getAccessToken();
+          fetchCountriesWithToken(newToken);
+        }
+      }
+  
+      checkToken();
   },[])
   
     return (
-      <section className="bg-white">
+      <section className="bg-white mt-24">
           <Link to={"/careers"} className="ml-3 mt-14 inline-flex justify-between items-center py-1 px-1 pr-4 mb-4 text-sm rounded-full bg-primary" role="alert">
             <span className="text-sm  rounded-full text-white px-4 py-1.5 mr-3 flex items-center gap-2"> <IoIosArrowBack /> Back to Careers List </span>     
           </Link>

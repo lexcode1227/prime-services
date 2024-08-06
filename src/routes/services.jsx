@@ -3,7 +3,7 @@ import React from 'react'
 const ServicesPage = () => {
   return (
     <>
-      <section className="flex justify-center bg-white pb-10 pt-20 lg:pb-20 lg:pt-[120px] lg:px-[50px] lg:py-[120px]">
+      <section className="flex justify-center bg-white mt-24 pb-10 pt-20 lg:pb-20 lg:pt-[120px] lg:px-[50px] lg:py-[120px]">
         <div className="container">
           <div className="flex flex-wrap max-w-full">
             <div className="w-full px-4">
