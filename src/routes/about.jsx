@@ -17,12 +17,20 @@ const AboutPage = () => {
                 <h1 className="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 pb-4">Mission</h1>
                 <p className="font-normal text-base leading-6 text-gray-600 "><strong>Prime Services</strong> is dedicated to connecting top-tier interpreters with clients who need reliable and high-quality language solutions. As an outsourcing company, our mission is to streamline the process of securing skilled interpreters, ensuring efficient, cost-effective, and professional services that meet the diverse needs of our clients.</p>
             </div>
+            <figure className='h-fit relative w-auto'>
+                <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" alt="..." className="w-full h-[300px]" />
+            </figure>
+        </div>
+        <div className="flex lg:flex-row flex-col justify-between gap-8 pt-12">
+            <figure className='h-fit relative w-auto'>
+                <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" alt="..." className="w-full h-[300px]" />
+            </figure>
             <div className="w-full lg:w-5/12 flex flex-col justify-center">
                 <h1 className="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 pb-4">Vision</h1>
                 <p className="font-normal text-base leading-6 text-gray-600 "><strong>Prime Services</strong> aspires to be the premier outsourcing partner for interpretation services, leading the industry in El Salvador and Latin America. We aim to set the benchmark for excellence by providing unparalleled support and resources to both our clients and interpreters, facilitating seamless communication and fostering long-term success.</p>
             </div>
         </div>
-        <div className="flex lg:flex-row flex-col justify-between gap-8 pt-12">
+        {/* <div className="flex lg:flex-row flex-col justify-between gap-8 pt-12">
             <div className="w-full lg:w-5/12 flex flex-col justify-center">
                 <h1 className="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 pb-4">Our Story</h1>
                 <p className="font-normal text-base leading-6 text-gray-600 ">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.In the first place we have granted to God, and by this our present charter confirmed for us and our heirs forever that the English Church shall be free, and shall have her rights entire, and her liberties inviolate; and we will that it be thus observed; which is apparent from</p>
@@ -51,7 +59,7 @@ const AboutPage = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div> */}
     </div>
 );
 }

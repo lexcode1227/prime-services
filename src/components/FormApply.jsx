@@ -104,12 +104,10 @@ const FormApply = ({handleModal, countries}) => {
                 </div>
                 <PhoneInput
                     id="phone"
-                    name="phoneInput"
                     defaultCountry="us"
                     value={phone}
                     onChange={(phone) => setPhone(phone)}
                     inputProps='rounded-lg'
-                    required
                 />
             </div>
             <div id="fileUpload" className="max-w-2xl">

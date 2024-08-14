@@ -105,7 +105,7 @@ const CareersInformationPage = () => {
                 <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Requirement:</h2>
                 <List className='text-justify'>
                   {job.requirement?.split("|").map((item, index)=> (
-                    <List.Item className='' key={`${index}-${item.length}`}>{item}</List.Item>
+                    <List.Item className='' name={item.length} key={`${index}-${item.length}`}>{item}</List.Item>
                   ))}
                 </List>
               </div>

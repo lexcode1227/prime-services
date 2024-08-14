@@ -180,6 +180,7 @@ const ContactPage = () => {
                   <label htmlFor="phone">Phone Number</label>
                   <PhoneInput
                     id="phone"
+                    name="phoneInput"
                     defaultCountry="us"
                     value={phoneNumber}
                     onChange={(phone) => setPhoneNumber(phone)}
