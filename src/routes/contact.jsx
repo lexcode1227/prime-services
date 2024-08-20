@@ -1,11 +1,13 @@
+import axios from 'axios';
 import { useState } from 'react'
 import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
+import { API_BACKEND } from '../../config';
 
 const ContactPage = () => {
   const [userData, setUserData] = useState({
     name: "",
-    lastName: "",
+    lastname: "",
     companyName: "",
     email: "",
     message: "",
@@ -20,16 +22,38 @@ const ContactPage = () => {
     }));
   };
 
-  const handleSubmit = (e)=> {
+  const handleSubmit = async (e)=> {
     e.preventDefault()
-    console.log({
-      name: userData.name,
-      lastName: userData.lastName,
-      companyName: userData.companyName,
-      email: userData.email,
-      phoneNumber: phoneNumber,
-      message: userData.message,
-    });
+    
+    try {
+      const {data} = await axios.post(`${API_BACKEND}/contact-us`, {
+        name: userData.name,
+        lastname: userData.lastname,
+        companyName: userData.companyName,
+        email: userData.email,
+        phoneNumber: phoneNumber,
+        message: userData.message,
+      }, 
+      {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      if (data.message) {
+        setUserData({
+          name: "",
+          lastname: "",
+          companyName: "",
+          email: "",
+          message: "",
+        })
+        setPhoneNumber("")
+        console.log("Informacion enviada correctamente", data);
+      }
+
+    } catch (err) {
+      console.error(err);
+    }
   }
   return (
     <>
@@ -44,7 +68,7 @@ const ContactPage = () => {
                 <h2 className="mb-6 text-[32px] font-bold uppercase text-dark dark:text-white sm:text-[40px] lg:text-[36px] xl:text-[40px]">
                   GET IN TOUCH WITH US
                 </h2>
-                <p className="mb-9 text-base leading-relaxed text-body-color dark:text-dark-6">
+                <p className="mb-9 text-base leading-relaxed text-body-color text-justify">
                   Curious or ready to dive into our opportunities? We’re just a message away! Connect with us through email, phone, or social media; whichever you prefer. Our team is here to guide and support you throughout your journey.
                 </p>
                 <div className="mb-8 flex w-full max-w-[370px]">
@@ -150,12 +174,12 @@ const ContactPage = () => {
                     onChange={handleChange}
                     placeholder="John"
                   />
-                  <label htmlFor="name">Last name</label>
+                  <label htmlFor="lastname">Last name</label>
                   <ContactInputBox
                     type="text"
                     name="lastname"
                     id="lastname"
-                    value={userData.lastName}
+                    value={userData.lastname}
                     onChange={handleChange}
                     placeholder="Smith"
                   />
@@ -187,12 +211,12 @@ const ContactPage = () => {
                     className='mt-3 mb-6 rounded border border-solid border-[#6B7280]'
                     required
                   />
-                  <label htmlFor="details">Your Message</label>
+                  <label htmlFor="message">Your Message</label>
                   <ContactTextArea
                     row="3"
                     placeholder="Write what you need..."
-                    name="details"
-                    id="details"
+                    name="message"
+                    id="message"
                     value={userData.message}
                     onChange={handleChange}
                   />
@@ -1024,7 +1048,7 @@ const ContactPage = () => {
 
 export default ContactPage
 
-const ContactTextArea = ({ row, placeholder, name }) => {
+const ContactTextArea = ({ row, placeholder, name, id, value, onChange }) => {
   return (
     <>
       <div className="mt-3 mb-6">
@@ -1032,6 +1056,9 @@ const ContactTextArea = ({ row, placeholder, name }) => {
           rows={row}
           placeholder={placeholder}
           name={name}
+          id={id}
+          value={value}
+          onChange={onChange}
           className="w-full resize-none rounded border border-stroke px-[14px] py-3 text-base text-body-color outline-none focus:border-primary dark:border-dark-3 dark:bg-dark dark:text-dark-6"
           required
         />
@@ -1040,7 +1067,7 @@ const ContactTextArea = ({ row, placeholder, name }) => {
   )
 }
 
-const ContactInputBox = ({ type, placeholder, name, id }) => {
+const ContactInputBox = ({ type, placeholder, name, id, value, onChange }) => {
   return (
     <>
       <div className="mt-3 mb-6">
@@ -1049,6 +1076,8 @@ const ContactInputBox = ({ type, placeholder, name, id }) => {
           placeholder={placeholder}
           name={name}
           id={id}
+          value={value}
+          onChange={onChange}
           required
           className="w-full rounded border border-stroke px-[14px] py-3 text-base text-body-color outline-none focus:border-primary dark:border-dark-3 dark:bg-dark dark:text-dark-6"
         />

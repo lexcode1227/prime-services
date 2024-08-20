@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
+import axios from 'axios';
 import { PhoneInput } from 'react-international-phone';
 import { Label, TextInput, Select, FileInput } from "flowbite-react";
 import { HiUser , HiMail } from "react-icons/hi";
 import 'react-international-phone/style.css';
-import { API_URL } from '../../config';
+import { API_URL, API_BACKEND } from '../../config';
 
 const FormApply = ({handleModal, countries}) => {
     const [userData, setUserData] = useState({
@@ -28,17 +29,37 @@ const FormApply = ({handleModal, countries}) => {
         setFile(e.target.files[0]);
       };
     
-    const handleSubmit = (e)=> {
+    const handleSubmit = async (e)=> {
         e.preventDefault()
-        console.log({
-            fullname: userData.fullname,
-            email: userData.email,
-            country: userData.country,
-            city: userData.city,
-            phone,
-            file
-        });
-        handleModal()
+
+        try {
+            const {data} = await axios.post(`${API_BACKEND}/apply-job`, {
+                fullname: userData.fullname,
+                email: userData.email,
+                country: userData.country,
+                city: userData.city,
+                phone,
+                file
+            }, 
+            {
+              headers: {
+                'Content-Type': 'multipart/form-data'
+              }
+            })
+            if (data.message) {
+              setUserData({
+                fullname: "",
+                email: "",
+                country: "",
+                city: ""
+              })
+              setPhone("")
+              setFile("")
+              handleModal()
+            }
+          } catch (err) {
+            console.error(err);
+          }
       }
 
     useEffect(()=> {
@@ -114,7 +135,7 @@ const FormApply = ({handleModal, countries}) => {
                 <div className="mb-2 block">
                     <Label htmlFor="file" value="Upload file" />
                 </div>
-                <FileInput id="file" accept='.pdf' helperText="Your CV information will be saved carefully" onChange={handleFileChange} required />
+                <FileInput id="file" name='cv' accept='.pdf' helperText="Your CV information will be saved carefully" onChange={handleFileChange} required />
             </div>
             <div>
                 <button

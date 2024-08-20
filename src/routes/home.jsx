@@ -11,11 +11,11 @@ const HomePage = () => {
     return (
       <>
         <section className="flex justify-center mt-[116px]">
-            <div className="w-full h-80 lg:h-[600px] px-4">
+            <div className="w-full h-80 lg:h-[600px] xl:h-[80vh] px-4">
                 <Carousel slideInterval={5000} >
                     <figure className='h-fit relative'>
-                        <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" alt="..." className="w-full" />
-                        <div className='flex items-center justify-center p-6 absolute h-full w-full top-0 right-0 left-0 bottom-0'>
+                        <img src="https://res.cloudinary.com/dwuv0l98b/image/upload/v1724171253/ofu3p1ychopesc2fzstl.jpg" alt="..." className="w-full" />
+                        <div className='hidden lg:flex items-center justify-center p-6 absolute h-full w-full top-0 right-0 left-0 bottom-0'>
                             <div className='w-full text-center p-5 rounded-lg'>
                                 <h3 className='w-full text-white font-bold text-2xl'>Join Our Remote Work Revolution!</h3>
                                 <p className='w-full text-white font-semibold text-xl mt-1'>Join us in reshaping your work experience, unlocking new possibilities through the power of remote work.</p>
@@ -23,8 +23,8 @@ const HomePage = () => {
                         </div>
                     </figure>
                     <figure className='h-fit relative'>
-                        <img src="https://flowbite.com/docs/images/carousel/carousel-2.svg" alt="..." className="w-full" />
-                        <div className='flex items-center justify-center p-6 absolute h-full w-full top-0 right-0 left-0 bottom-0'>
+                        <img src="https://res.cloudinary.com/dwuv0l98b/image/upload/v1724171253/wxfn3b0bfzzru7xrjwrc.jpg" alt="..." className="w-full" />
+                        <div className='hidden lg:flex items-center justify-center p-6 absolute h-full w-full top-0 right-0 left-0 bottom-0'>
                             <div className='w-full text-center p-5 rounded-lg'>
                                 <h3 className='w-full text-white font-bold text-2xl'>We are different!</h3>
                                 <p className='w-full text-white font-semibold text-xl mt-1'>We’re transforming the BPO industry with our people-centric approach, elevating the quality of our service.</p>
@@ -32,8 +32,8 @@ const HomePage = () => {
                         </div>
                     </figure>
                     <figure className='h-fit relative'>
-                        <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" alt="..." className="w-full" />
-                        <div className='flex items-center justify-center p-6 absolute h-full w-full top-0 right-0 left-0 bottom-0'>
+                        <img src="https://res.cloudinary.com/dwuv0l98b/image/upload/v1724171521/laxutmvuyf8xwmjpcbeo.jpg" alt="..." className="w-full" />
+                        <div className='hidden lg:flex items-center justify-center p-6 absolute h-full w-full top-0 right-0 left-0 bottom-0'>
                             <div className='w-full text-center p-5 rounded-lg'>
                                 <h3 className='w-full text-white font-bold text-2xl'>Tailored solutions!</h3>
                                 <p className='w-full text-white font-semibold text-xl mt-1'>We craft solutions as unique as your business using a wide range of platforms, connecting you with the right agents for a personalized experience.</p>
@@ -41,8 +41,8 @@ const HomePage = () => {
                         </div>
                     </figure>
                     <figure className='h-fit relative'>
-                        <img src="https://flowbite.com/docs/images/carousel/carousel-4.svg" alt="..." className="w-full" />
-                        <div className='flex items-center justify-center p-6 absolute h-full w-full top-0 right-0 left-0 bottom-0'>
+                        <img src="https://res.cloudinary.com/dwuv0l98b/image/upload/v1724171521/zn7xpkpm3tqaxxofawan.jpg" alt="..." className="w-full" />
+                        <div className='hidden lg:flex items-center justify-center p-6 absolute h-full w-full top-0 right-0 left-0 bottom-0'>
                             <div className='w-full text-center p-5 rounded-lg'>
                                 <h3 className='w-full text-white font-bold text-2xl'>Supportive Team, Bright Future!</h3>
                                 <p className='w-full text-white font-semibold text-xl mt-1'>Realize your potential. Competitive salaries, a caring team, and a fantastic work environment await you!</p>

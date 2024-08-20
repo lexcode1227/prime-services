@@ -18,12 +18,12 @@ const AboutPage = () => {
                 <p className="font-normal text-base leading-6 text-gray-600 "><strong>Prime Services</strong> is dedicated to connecting top-tier interpreters with clients who need reliable and high-quality language solutions. As an outsourcing company, our mission is to streamline the process of securing skilled interpreters, ensuring efficient, cost-effective, and professional services that meet the diverse needs of our clients.</p>
             </div>
             <figure className='h-fit relative w-auto'>
-                <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" alt="..." className="w-full h-[300px]" />
+                <img src="https://res.cloudinary.com/dwuv0l98b/image/upload/v1724137617/g22vbvjyhktemohxfrpi.jpg" alt="..." className="w-full h-[300px]" />
             </figure>
         </div>
         <div className="flex lg:flex-row flex-col justify-between gap-8 pt-12">
-            <figure className='h-fit relative w-auto'>
-                <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" alt="..." className="w-full h-[300px]" />
+            <figure className='h-fit relative w-auto order-2 lg:order-first'>
+                <img src="https://res.cloudinary.com/dwuv0l98b/image/upload/v1724137617/hzfmg8h6mm88nzv0zrk2.jpg" alt="..." className="w-full h-[300px]" />
             </figure>
             <div className="w-full lg:w-5/12 flex flex-col justify-center">
                 <h1 className="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 pb-4">Vision</h1>
